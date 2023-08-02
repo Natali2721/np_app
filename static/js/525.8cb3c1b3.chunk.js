@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktest_sameit=self.webpackChunktest_sameit||[]).push([[525],{525:function(e,t,s){s.r(t);var n=s(590),c=s(184);t.default=function(){return(0,c.jsx)(n.l3,{children:(0,c.jsx)(n.eA,{children:"Welcome to Departments!"})})}}}]);
+//# sourceMappingURL=525.8cb3c1b3.chunk.js.map
