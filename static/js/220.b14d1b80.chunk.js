@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunktest_sameit=self.webpackChunktest_sameit||[]).push([[220],{220:function(e,t,s){s.r(t);var c=s(590),n=s(184);t.default=function(){return(0,n.jsx)(c.l3,{children:(0,n.jsx)(c.eA,{children:"Welcome to Parcels!"})})}}}]);
-//# sourceMappingURL=220.b14d1b80.chunk.js.map
