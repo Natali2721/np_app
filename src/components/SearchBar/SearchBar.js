@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import SearchForm from './SearchForm';
 
 import SearchInput from './SearchInput';
-import { Button, ButtonIcon, SearchBox } from 'styles/Element.styled';
+import { ButtonIcon, SearchBox } from 'styles/Element.styled';
 
 export const SearchBar = ({ onSubmit }) => (
   <SearchBox>
