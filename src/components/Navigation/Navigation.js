@@ -14,7 +14,7 @@ const Navigation = () => {
         }}
         to="/"
       >
-        Parcels
+        Перевірити ТТН
       </NavLink>
 
       <NavLink
@@ -28,7 +28,7 @@ const Navigation = () => {
         }}
         to="/departments"
       >
-        Departments
+        Відділення
       </NavLink>
     </nav>
   );

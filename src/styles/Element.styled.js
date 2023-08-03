@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 const Header = styled.header`
   background-color: ${p => p.theme.colors.accent};
@@ -27,6 +27,18 @@ const Container = styled.div`
   justify-content: center;
 `;
 
+const SearchBox = styled.div`
+  padding: 16px 32px;
+`;
+
+const ContainerInfo = styled.div`
+  padding: 16px 32px;
+  display: flex;
+  //flex-direction: column;
+  //justify-content: center;
+  gap: 30px;
+`;
+
 const LoaderContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -43,29 +55,6 @@ const HomeContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-`;
-
-const ButtonDirection = styled.button`
-  margin: 0 auto 20px;
-  padding: 8px 16px;
-  border-radius: 4px;
-  border: none;
-  font-weight: 600;
-  color: hsl(257, 46%, 27%);
-  background-color: ${p => p.theme.colors.accent};
-  transition: transform 250ms linear;
-  transition: background-color 250ms linear;
-  &:hover {
-    background-color: hsl(269, 35%, 73%);
-    transform: scale(1.1);
-  }
-`;
-
-const LinkBack = styled(Link)`
-  display: flex;
-  font-size: 14px;
-  align-items: center;
-  gap: 10px;
 `;
 
 const SelectContainer = styled.div`
@@ -114,56 +103,11 @@ const ListItem = styled.li`
   }
 `;
 
-const AvatarBox = styled.div`
-  position: relative;
-  height: 222px;
-  padding: 28px 36px 18px 36px;
-  ::after {
-    content: ' ';
-    display: inline-block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 8px;
-    width: 100%;
-    background: ${p => p.theme.colors.accent};
-    box-shadow: ${p => p.theme.boxShadow.avatarLine};
-  }
-`;
-
-const LogoImg = styled.img`
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 76px;
-  height: 22px;
-`;
-
-const Avatar = styled.div`
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  bottom: -36px;
-  left: 150px;
-  background: ${p => p.theme.colors.accent};
-  box-shadow: 0px 3.5px 3.5px rgba(0, 0, 0, 0.06),
-    inset 0px -1.71846px 3.5px #ae7be3, inset 0px 3.5px 2.5777px #fbf8ff;
-`;
-
-const AvatarImg = styled.img`
-  background: ${p => p.theme.colors.cardBackground};
-  width: 62px;
-  height: 62px;
-  border-radius: 50%;
-`;
-
 const ContentBox = styled.div`
-  padding: 62px 36px 36px 36px;
+  padding: 20px;
+  flex-basis: calc((100% - 60px) / 2);
+  border: solid 1px black;
+  border-radius: 8px;
 `;
 
 const Text = styled.p`
@@ -184,9 +128,10 @@ const Button = styled.button`
   padding: 14px 28px;
   font-size: ${p => p.theme.fontSizes.s};
   font-weight: ${p => p.theme.fontWeight.bold};
-  text-transform: uppercase;
+
   background-color: ${p => p.theme.colors.accent};
   border-radius: ${p => p.theme.radii.button};
+
   cursor: pointer;
   box-shadow: ${p => p.theme.boxShadow.button};
   transition: color 250ms linear;
@@ -228,26 +173,106 @@ const LoadButton = styled.button`
   }
 `;
 
+const Form = styled.form`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  //max-width: 300px;
+  background-color: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 8px;
+`;
+const Input = styled.input`
+  display: inline-block;
+  //width: 100%;
+  width: 300px;
+  font: inherit;
+  font-size: 16px;
+  // border: none;
+  // outline: none;
+  border-radius: 8px;
+  padding: 4px;
+  &::placeholder {
+    font: inherit;
+    font-size: 16px;
+  }
+`;
+
+const ButtonIcon = styled.button`
+  display: flex;
+  align-items: center;
+  background-color: inherit;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  margin-right: 4px;
+  margin-left: 4px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
 export {
-  Avatar,
-  AvatarImg,
   Button,
-  ButtonDirection,
+  ButtonIcon,
+  ContainerInfo,
+  Form,
   Header,
   HeaderContainer,
   HomeContainer,
   HomeTitle,
-  LinkBack,
+  Input,
   List,
   ListItem,
   LoadButton,
   LoaderContainer,
-  AvatarBox,
-  LogoImg,
   Container,
   Text,
+  SearchBox,
   SelectContainer,
   SelectInput,
   SelectText,
   ContentBox,
 };
+
+// const Button = styled.button`
+//   padding: 8px 16px;
+//   margin-top: ${p => p.theme.space[4]}px;
+//   border: none;
+//   border-radius: 15px;
+//   background-color: #3f51b5;
+//   color: white;
+
+//   text-decoration: none;
+//   font-family: inherit;
+//   font-size: 16px;
+//   line-height: 24px;
+//   font-style: normal;
+//   font-weight: 500;
+//   min-width: 180px;
+//   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+//     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+
+//   cursor: pointer;
+//   transition: background-color 250ms linear;
+//   &:hover {
+//     background-color: #303f9f;
+//   }
+// `;
+
+/*const P = styled.p`
+  color: ${p => p.theme.colors.black};
+  font-family: ${p => p.theme.fonts.body};
+  font-size: ${p => p.theme.fontSizes.m};
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 0px;
+  margin-top: ${p => p.theme.space[2]}px;
+  margin-bottom: ${p => p.theme.space[3]}px;
+`;
+*/
