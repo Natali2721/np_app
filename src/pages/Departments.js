@@ -34,7 +34,8 @@ const Departments = () => {
 
   useEffect(() => {
     console.log(city);
-  }, [city]);
+    console.log(departments);
+  }, [city, departments]);
 
   return (
     <Container>
