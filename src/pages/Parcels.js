@@ -1,5 +1,5 @@
 import { getTrackingInfo } from 'Api/apiServices';
-import { SearchBar } from 'components/SearchBar/SearchBar';
+import { TrackBar } from 'components/TrackBar/TrackBar';
 import TrackHistory from 'components/TrackingHistory/TrackingHistory';
 import TrackInfoBar from 'components/TrackingInfoBar/TrackingInfoBar';
 import { useEffect, useState } from 'react';
@@ -59,7 +59,7 @@ const Parcels = () => {
 
   return (
     <Container>
-      <SearchBar onSubmit={handleSubmit} />
+      <TrackBar onSubmit={handleSubmit} />
       <ContainerInfo>
         <TrackInfoBar trackingInfo={trackingInfo} />
         <TrackHistory items={trackingList} onClick={onClick} />

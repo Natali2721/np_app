@@ -1,19 +1,21 @@
 import { BsSearch } from 'react-icons/bs';
-import PropTypes from 'prop-types';
-import { ButtonIcon, SearchBox } from 'styles/Element.styled';
-import SearchForm from 'components/TrackBar/SearchForm';
-import { SearchInput } from './SearchInput';
 
-export const SearchBar = ({ onSubmit }) => (
+import PropTypes from 'prop-types';
+import SearchForm from './SearchForm';
+
+import { ButtonIcon, SearchBox } from 'styles/Element.styled';
+import { TrackInput } from './TrackInput';
+
+export const TrackBar = ({ onSubmit }) => (
   <SearchBox>
     <SearchForm onSubmit={onSubmit}>
-      <SearchInput />
+      <TrackInput />
       <ButtonIcon type="submit" aria-label="search button">
         <BsSearch />
       </ButtonIcon>
     </SearchForm>
   </SearchBox>
 );
-SearchBar.propTypes = {
+TrackBar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };

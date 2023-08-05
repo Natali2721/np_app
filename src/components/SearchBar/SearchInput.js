@@ -1,16 +1,14 @@
 import { Input } from 'styles/Element.styled';
 
-const SearchInput = () => (
+export const SearchInput = () => (
   <Input
     type="text"
-    name="TTN"
-    pattern="^[0-9]{14}$"
-    title="May contain only numbers"
+    name="city"
+    pattern="^[А-Яа-яёЁЇїІіЄєҐґ]+$"
+    title="May contain only letters"
     required
     autoComplete="off"
     autoFocus
-    placeholder="Введіть номер ТТН..."
+    placeholder="Введіть назву населеного пункту..."
   />
 );
-
-export default SearchInput;

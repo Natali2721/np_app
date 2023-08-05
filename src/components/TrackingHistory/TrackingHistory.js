@@ -11,7 +11,7 @@ const TrackHistory = ({ items, onClick }) => {
   console.log(items);
   console.log(items.length);
 
-  const reversed = items.reverse();
+  // const reversed = items.reverse();
 
   return (
     <ContentBox>
@@ -21,7 +21,7 @@ const TrackHistory = ({ items, onClick }) => {
       </ButtonDelete>
       {items.length > 0 && (
         <List>
-          {reversed.map(item => {
+          {items.map(item => {
             return <ListItem key={item}>{item}</ListItem>;
           })}
         </List>
