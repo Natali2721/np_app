@@ -77,33 +77,31 @@ const SelectInput = styled.select`
   font-size: 14px;
 `;
 
-const List = styled.ul`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 28px;
+const List = styled.ul``;
 
-  @media screen and (min-width: 768px) {
-    min-width: 768px;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 1280px;
+const ListItem = styled.li`
+  border-radius: ${p => p.theme.radii.card};
+  height: 24px;
+  margin-bottom: 8px;
+  &:first-of-type {
+    font-weight: bold;
   }
 `;
 
-const ListItem = styled.li`
-  width: 380px;
-  text-align: center;
-  text-transform: uppercase;
-  background: ${p => p.theme.colors.cardBackground};
-  box-shadow: ${p => p.theme.boxShadow.card};
+const SelectButton = styled.button`
   border-radius: ${p => p.theme.radii.card};
-  &.none {
-    display: none;
+  height: 24px;
+  border: none;
+  background-color: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  &:first-of-type {
+    font-weight: bold;
   }
 `;
 
 const ContentBox = styled.div`
+  position: relative;
   padding: 20px;
   flex-basis: calc((100% - 60px) / 2);
   border: solid 1px black;
@@ -111,15 +109,20 @@ const ContentBox = styled.div`
 `;
 
 const Text = styled.p`
-  color: ${p => p.theme.colors.accent};
+  color: black;
+  font-weight: bold;
   line-height: ${p => p.theme.lineHeight.card};
-  text-transform: uppercase;
+
   :not(:last-of-type) {
     margin-bottom: 16px;
   }
   :last-of-type {
     margin-bottom: 26px;
   }
+`;
+
+const TextInfo = styled.span`
+  font-weight: normal;
 `;
 
 const Button = styled.button`
@@ -143,33 +146,6 @@ const Button = styled.button`
   }
   &.active {
     background-color: ${p => p.theme.colors.buttonActiveBg};
-  }
-`;
-
-const LoadButton = styled.button`
-  align-self: center;
-  padding: 8px 16px;
-  max-width: fit-content;
-  margin-top: 32px;
-  border: none;
-  border-radius: 8px;
-  background-color: #3f51b5;
-  color: white;
-  text-decoration: none;
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 24px;
-  font-style: normal;
-  font-weight: 500;
-  min-width: 180px;
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-  transition: background-color 250ms linear;
-  transition: transform 250ms linear;
-  &:hover {
-    background-color: #303f9f;
-    transform: scale(1.1);
   }
 `;
 
@@ -217,9 +193,31 @@ const ButtonIcon = styled.button`
   }
 `;
 
+const ButtonDelete = styled.button`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: inherit;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  margin-right: 4px;
+  margin-left: 4px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
 export {
   Button,
   ButtonIcon,
+  ButtonDelete,
   ContainerInfo,
   Form,
   Header,
@@ -229,14 +227,15 @@ export {
   Input,
   List,
   ListItem,
-  LoadButton,
   LoaderContainer,
   Container,
   Text,
+  TextInfo,
   SearchBox,
   SelectContainer,
   SelectInput,
   SelectText,
+  SelectButton,
   ContentBox,
 };
 
