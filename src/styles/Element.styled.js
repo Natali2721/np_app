@@ -83,9 +83,7 @@ const ListItem = styled.li`
   border-radius: ${p => p.theme.radii.card};
   height: 24px;
   margin-bottom: 8px;
-  &:first-of-type {
-    font-weight: bold;
-  }
+  font-weight: bold;
 `;
 
 const SelectButton = styled.button`
