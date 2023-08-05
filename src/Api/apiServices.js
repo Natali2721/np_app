@@ -9,7 +9,7 @@ const instance = axios.create({
 
 export const getTrackingInfo = async trackingNumber => {
   const config = {
-    apiKey: '7c0138a6c2b08b58d637c04f527fd025',
+    apiKey: API_KEY,
     modelName: 'TrackingDocument',
     calledMethod: 'getStatusDocuments',
     methodProperties: {
