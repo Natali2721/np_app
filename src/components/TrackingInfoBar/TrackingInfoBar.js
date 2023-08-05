@@ -1,46 +1,25 @@
-// import { Card, CardContent, Typography } from '@mui/material';
-// import { FC } from 'react';
-// import { useTracking } from '../redux/hooks';
-// import { PlaceholderText } from './PlaceholderText';
+import { ContentBox, Text, TextInfo } from 'styles/Element.styled';
 
-import { ContentBox } from 'styles/Element.styled';
+const TrackInfoBar = ({ trackingInfo }) => {
+  console.log(trackingInfo);
 
-// export const TrackInfo: FC = () => {
-//   const { data } = useTracking();
+  const { WarehouseRecipient, WarehouseSender, Status } = trackingInfo;
 
-//   return (
-//     <Card variant="outlined" sx={{ borderRadius: '16px' }}>
-//       <CardContent>
-//         {data ? (
-//           <>
-//             <Typography variant="h5" component="h2" gutterBottom>
-//               <span style={{ fontWeight: 'bold' }}>Status</span>: {data.Status}
-//             </Typography>
-//             <Typography variant="body1" component="p" gutterBottom>
-//               <span style={{ fontWeight: 'bold' }}>Warehouse sender</span>:{' '}
-//               {data.WarehouseSender}
-//             </Typography>
-//             <Typography variant="body1" component="p">
-//               <span style={{ fontWeight: 'bold' }}>Warehouse recipient</span>:{' '}
-//               {data.WarehouseRecipient}
-//             </Typography>
-//           </>
-//         ) : (
-//           <PlaceholderText
-//             message={
-//               'To display information about the parcel, enter TTN in the field above'
-//             }
-//           />
-//         )}
-//       </CardContent>
-//     </Card>
-//   );
-// };
+  console.log(trackingInfo.Status);
 
-const TrackInfoBar = () => (
-  <ContentBox>
-    <p>Статус доставки...</p>
-  </ContentBox>
-);
+  return (
+    <ContentBox>
+      <Text>
+        Статус доставки : <TextInfo>{Status || ''}</TextInfo>
+      </Text>
+      <Text>
+        Відправлено : <TextInfo>{WarehouseSender || ''}</TextInfo>
+      </Text>
+      <Text>
+        Отримано : <TextInfo>{WarehouseRecipient || ''}</TextInfo>
+      </Text>
+    </ContentBox>
+  );
+};
 
 export default TrackInfoBar;
