@@ -27,20 +27,20 @@ export const getTrackingInfo = async trackingNumber => {
   return data.data[0];
 };
 
-// export const getDepartmentsInfo = async city => {
-//   const config = {
-//     apiKey: API_KEY,
-//     modelName: 'Address',
-//     calledMethod: 'getWarehouses',
-//     methodProperties: {
-//       CityName: city,
-//       Limit: '10',
-//     },
-//   };
+export const getDepartmentsInfo = async city => {
+  const config = {
+    apiKey: API_KEY,
+    modelName: 'Address',
+    calledMethod: 'getWarehouses',
+    methodProperties: {
+      CityName: city,
+      Limit: '10',
+    },
+  };
 
-//   const response = await axios.get(`config`);
-//   return response.data;
-// };
+  const response = await axios.get(`config`);
+  return response.data;
+};
 
 // export const getDepartmentsInfo = async (page: number) => {
 //   const reqCredentials = reqStructure({
