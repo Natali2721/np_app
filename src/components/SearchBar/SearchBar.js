@@ -1,10 +1,8 @@
 import { BsSearch } from 'react-icons/bs';
-
 import PropTypes from 'prop-types';
-import SearchForm from './SearchForm';
-
-import SearchInput from './SearchInput';
 import { ButtonIcon, SearchBox } from 'styles/Element.styled';
+import SearchForm from 'components/TrackBar/SearchForm';
+import { SearchInput } from './SearchInput';
 
 export const SearchBar = ({ onSubmit }) => (
   <SearchBox>
