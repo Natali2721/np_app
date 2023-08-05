@@ -43,7 +43,7 @@ const Parcels = () => {
         setTrackingList(prevState => [...prevState, trackingNumber]);
       }
     });
-  }, [trackingNumber]);
+  }, [trackingNumber, trackingList]);
 
   useEffect(() => {
     if (trackingList.length < 1) {
