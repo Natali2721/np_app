@@ -38,7 +38,7 @@ export const getDepartmentsInfo = async city => {
     },
   };
 
-  const response = await axios.get(`config`);
+  const response = await instance.post('', config);
   return response.data;
 };
 
