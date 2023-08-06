@@ -48,7 +48,8 @@ const HomeTitle = styled.h1`
   color: hsl(269, 35%, 53%);
   padding-top: 32px;
   padding-bottom: 32px;
-  margin: 10px auto;
+  margin: auto;
+  text-align: center;
 `;
 const HomeContainer = styled.div`
   padding-top: 36px;
@@ -124,15 +125,16 @@ const TextInfo = styled.span`
 `;
 
 const Button = styled.button`
+  display: block;
   width: 196px;
   height: 50px;
   padding: 14px 28px;
   font-size: ${p => p.theme.fontSizes.s};
   font-weight: ${p => p.theme.fontWeight.bold};
-
+  margin: 0 auto;
   background-color: ${p => p.theme.colors.accent};
   border-radius: ${p => p.theme.radii.button};
-
+  border-color: transparent;
   cursor: pointer;
   box-shadow: ${p => p.theme.boxShadow.button};
   transition: color 250ms linear;
@@ -165,7 +167,7 @@ const Input = styled.input`
   font: inherit;
   font-size: 16px;
   // border: none;
-  // outline: none;
+  outline: none;
   border-radius: 8px;
   padding: 4px;
   &::placeholder {
@@ -212,12 +214,35 @@ const ButtonDelete = styled.button`
   }
 `;
 
+const Galery = styled.ul`
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  gap: 20px;
+  list-style: none;
+`;
+
+const GaleryItem = styled.li`
+  // display: block;
+  flex-basis: calc((100% - 60px) / 4);
+  padding: 12px;
+  //height: auto;
+  //overflow: hidden;
+  border: solid 1px black;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+`;
+
 export {
   Button,
   ButtonIcon,
   ButtonDelete,
   ContainerInfo,
   Form,
+  Galery,
+  GaleryItem,
   Header,
   HeaderContainer,
   HomeContainer,
