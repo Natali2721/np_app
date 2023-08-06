@@ -1,4 +1,4 @@
-import { Button, Galery, GaleryItem, HomeTitle } from 'styles/Element.styled';
+import { Button, Galery, GaleryItem, Title } from 'styles/Element.styled';
 import PropTypes from 'prop-types';
 
 const DepartmentsList = ({ items, onClick, city }) => {
@@ -7,7 +7,7 @@ const DepartmentsList = ({ items, onClick, city }) => {
   return (
     <div>
       {items.length === 0 && city === '' && (
-        <HomeTitle>Оберіть, будь ласка, населений пункт</HomeTitle>
+        <Title>Оберіть, будь ласка, населений пункт</Title>
       )}
       {items.length > 0 && (
         <Galery>
