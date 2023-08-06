@@ -23,7 +23,7 @@ const Parcels = () => {
     console.log(searchForm.elements.TTN.value);
     setTrackingNumber(searchForm.elements.TTN.value);
     localStorage.setItem('numbers', JSON.stringify(trackingList));
-    searchForm.reset();
+    //searchForm.reset();
   };
 
   const onClick = () => {
@@ -64,18 +64,23 @@ const Parcels = () => {
     }
   }, [trackingList]);
 
-  // useEffect(() => {
-  //   console.log(trackingInfo);
-  //   console.log(trackingList);
-  //   console.log(trackingList.length);
-  // }, [trackingInfo]);
+  const input = document.getElementById('TTN');
+
+  const updateNumber = item => {
+    setTrackingNumber(item);
+    input.value = item;
+  };
 
   return (
     <Container>
       <TrackBar onSubmit={handleSubmit} />
       <ContainerInfo>
         <TrackInfoBar trackingInfo={trackingInfo} />
-        <TrackHistory items={trackingList} onClick={onClick} />
+        <TrackHistory
+          items={trackingList}
+          onClick={onClick}
+          updateNumber={updateNumber}
+        />
       </ContainerInfo>
     </Container>
   );
