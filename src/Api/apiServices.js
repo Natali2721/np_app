@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const API_KEY = '732dcfaad69fb475455c551db818568b';
 const BASE_URL = 'https://api.novaposhta.ua/v2.0/json/';
+const LIMIT_PER_PAGE = 12;
 
 const instance = axios.create({
   baseURL: BASE_URL,
@@ -27,14 +28,15 @@ export const getTrackingInfo = async trackingNumber => {
   return data.data[0];
 };
 
-export const getDepartmentsInfo = async city => {
+export const getDepartmentsInfo = async (city, page) => {
   const config = {
     apiKey: API_KEY,
     modelName: 'Address',
     calledMethod: 'getWarehouses',
     methodProperties: {
       CityName: city,
-      Limit: '10',
+      Limit: LIMIT_PER_PAGE,
+      Page: page,
     },
   };
 
