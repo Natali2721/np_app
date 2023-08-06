@@ -10,11 +10,19 @@ const Parcels = () => {
   const [trackingNumber, setTrackingNumber] = useState('');
   const [trackingInfo, setTrackingInfo] = useState({});
 
+  useEffect(() => {
+    const numbers = JSON.parse(localStorage.getItem('numbers'));
+    if (numbers) {
+      setTrackingList(numbers);
+    }
+  }, []);
+
   const handleSubmit = e => {
     e.preventDefault();
     const searchForm = e.currentTarget;
     console.log(searchForm.elements.TTN.value);
     setTrackingNumber(searchForm.elements.TTN.value);
+    localStorage.setItem('numbers', JSON.stringify(trackingList));
     searchForm.reset();
   };
 
@@ -42,8 +50,13 @@ const Parcels = () => {
       if (!trackingList.includes(trackingNumber)) {
         setTrackingList(prevState => [...prevState, trackingNumber]);
       }
+      //localStorage.setItem('numbers', JSON.stringify(trackingList));
     });
   }, [trackingNumber, trackingList]);
+
+  useEffect(() => {
+    localStorage.setItem('numbers', JSON.stringify(trackingList));
+  }, [trackingList]);
 
   useEffect(() => {
     if (trackingList.length < 1) {
