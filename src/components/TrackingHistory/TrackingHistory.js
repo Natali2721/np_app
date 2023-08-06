@@ -6,6 +6,7 @@ import {
   ListItem,
 } from 'styles/Element.styled';
 import { AiFillDelete } from 'react-icons/ai';
+import PropTypes from 'prop-types';
 
 const TrackHistory = ({ items, onClick }) => {
   console.log(items);
@@ -31,3 +32,8 @@ const TrackHistory = ({ items, onClick }) => {
 };
 
 export default TrackHistory;
+
+TrackHistory.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  items: PropTypes.array,
+};

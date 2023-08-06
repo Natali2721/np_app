@@ -1,4 +1,5 @@
 import { ContentBox, Text, TextInfo } from 'styles/Element.styled';
+import PropTypes from 'prop-types';
 
 const TrackInfoBar = ({ trackingInfo }) => {
   console.log(trackingInfo);
@@ -23,3 +24,7 @@ const TrackInfoBar = ({ trackingInfo }) => {
 };
 
 export default TrackInfoBar;
+
+TrackInfoBar.propTypes = {
+  trackingInfo: PropTypes.object,
+};
