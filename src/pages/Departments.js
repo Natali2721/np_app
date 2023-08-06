@@ -1,5 +1,6 @@
 import { getDepartmentsInfo } from 'Api/apiServices';
 import DepartmentsList from 'components/DepartmentsList/DepartmentsList';
+import Loader from 'components/Loader/Loader';
 import { SearchBar } from 'components/SearchBar/SearchBar';
 import { useEffect, useState } from 'react';
 import { Container } from 'styles/Element.styled';
@@ -8,13 +9,17 @@ const Departments = () => {
   const [city, setCity] = useState('');
   const [departments, setDepartments] = useState([]);
   const [page, setPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
     const searchForm = e.currentTarget;
     console.log(searchForm.elements.city.value);
     setCity(searchForm.elements.city.value);
-    //searchForm.reset();
+    setPage(1);
+    setDepartments([]);
+    setIsLoading(true);
+    console.log(isLoading);
   };
 
   const onClickLoadMore = () => {
@@ -34,9 +39,9 @@ const Departments = () => {
           'There is no departments with this request. Please, try again'
         );
       }
-      //setDepartments(data.data);
       setDepartments(prevState => [...prevState, ...data.data]);
     });
+    setIsLoading(false);
   }, [city, page]);
 
   useEffect(() => {
@@ -47,7 +52,13 @@ const Departments = () => {
   return (
     <Container>
       <SearchBar onSubmit={handleSubmit} />
-      <DepartmentsList items={departments} onClick={onClickLoadMore} />
+      {isLoading && <Loader />}
+      <DepartmentsList
+        city={city}
+        isLoading={isLoading}
+        items={departments}
+        onClick={onClickLoadMore}
+      />
     </Container>
   );
 };

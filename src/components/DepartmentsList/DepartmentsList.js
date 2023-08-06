@@ -1,19 +1,20 @@
 import { Button, Galery, GaleryItem, HomeTitle } from 'styles/Element.styled';
 import PropTypes from 'prop-types';
 
-const DepartmentsList = ({ items, onClick }) => {
+const DepartmentsList = ({ items, onClick, city }) => {
   console.log(items);
-  // console.log(items.length);
 
   return (
     <div>
-      {items.length === 0 && (
+      {items.length === 0 && city === '' && (
         <HomeTitle>Оберіть, будь ласка, населений пункт</HomeTitle>
       )}
       {items.length > 0 && (
         <Galery>
           {items.map(item => {
-            return <GaleryItem>{item.Description}</GaleryItem>;
+            return (
+              <GaleryItem key={item.SiteKey}>{item.Description}</GaleryItem>
+            );
           })}
         </Galery>
       )}
@@ -26,4 +27,6 @@ export default DepartmentsList;
 
 DepartmentsList.propTypes = {
   items: PropTypes.array,
+  onClick: PropTypes.func,
+  city: PropTypes.string,
 };
