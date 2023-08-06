@@ -39,5 +39,6 @@ export default TrackHistory;
 
 TrackHistory.propTypes = {
   onClick: PropTypes.func.isRequired,
+  updateNumber: PropTypes.func.isRequired,
   items: PropTypes.array,
 };
