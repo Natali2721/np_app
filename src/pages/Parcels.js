@@ -10,6 +10,8 @@ const Parcels = () => {
   const [trackingNumber, setTrackingNumber] = useState('');
   const [trackingInfo, setTrackingInfo] = useState({});
 
+  const input = document.getElementById('TTN');
+
   useEffect(() => {
     const numbers = JSON.parse(localStorage.getItem('numbers'));
     if (numbers) {
@@ -29,6 +31,7 @@ const Parcels = () => {
   const onClick = () => {
     setTrackingList([]);
     setTrackingNumber('');
+    input.value = '';
   };
 
   useEffect(() => {
@@ -46,11 +49,10 @@ const Parcels = () => {
         );
       }
       setTrackingInfo(data);
-      //setTrackingList(prevState => [...prevState, data]);
+
       if (!trackingList.includes(trackingNumber)) {
         setTrackingList(prevState => [...prevState, trackingNumber]);
       }
-      //localStorage.setItem('numbers', JSON.stringify(trackingList));
     });
   }, [trackingNumber, trackingList]);
 
@@ -63,8 +65,6 @@ const Parcels = () => {
       setTrackingInfo({});
     }
   }, [trackingList]);
-
-  const input = document.getElementById('TTN');
 
   const updateNumber = item => {
     setTrackingNumber(item);
