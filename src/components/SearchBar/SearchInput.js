@@ -9,6 +9,6 @@ export const SearchInput = () => (
     required
     autoComplete="off"
     autoFocus
-    placeholder="Введіть назву населеного пункту..."
+    placeholder="Введіть назву міста..."
   />
 );

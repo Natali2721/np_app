@@ -159,6 +159,7 @@ const ListItem = styled.li`
   height: 24px;
   margin-bottom: 8px;
   font-weight: bold;
+  cursor: pointer;
 `;
 
 const Title = styled.h1`
