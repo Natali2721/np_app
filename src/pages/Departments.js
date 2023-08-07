@@ -2,24 +2,25 @@ import { getDepartmentsInfo } from 'Api/apiServices';
 import DepartmentsList from 'components/DepartmentsList/DepartmentsList';
 import Loader from 'components/Loader/Loader';
 import { SearchBar } from 'components/SearchBar/SearchBar';
+import Notiflix from 'notiflix';
 import { useEffect, useState } from 'react';
-import { Container } from 'styles/Element.styled';
+import { Button, Container } from 'styles/Element.styled';
 
 const Departments = () => {
   const [city, setCity] = useState('');
   const [departments, setDepartments] = useState([]);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const [total, setTotal] = useState(0);
 
   const handleSubmit = e => {
     e.preventDefault();
     const searchForm = e.currentTarget;
-    console.log(searchForm.elements.city.value);
     setCity(searchForm.elements.city.value);
     setPage(1);
     setDepartments([]);
     setIsLoading(true);
-    console.log(isLoading);
+    setTotal(0);
   };
 
   const onClickLoadMore = () => {
@@ -28,37 +29,37 @@ const Departments = () => {
 
   useEffect(() => {
     if (city === '') {
-      return console.log('please... ');
+      return Notiflix.Notify.info(
+        'Будь ласка, введіть назву населеного пункту'
+      );
     }
-
     getDepartmentsInfo(city, page).then(data => {
-      console.log(data);
-      if (!data) {
-        setDepartments([]);
-        return console.log(
-          'There is no departments with this request. Please, try again'
+      const list = data.data;
+
+      if (list.length === 0) {
+        setIsLoading(false);
+        return Notiflix.Notify.info(
+          'Нажаль ми не маємо інформації. Перевірте вірність назви населеного пункту.'
         );
       }
-      setDepartments(prevState => [...prevState, ...data.data]);
-    });
-    setIsLoading(false);
-  }, [city, page]);
 
-  useEffect(() => {
-    console.log(city);
-    console.log(departments);
-  }, [city, departments]);
+      setIsLoading(false);
+
+      setDepartments(prevState => [...prevState, ...data.data]);
+
+      const { totalCount } = data.info;
+      setTotal(totalCount);
+    });
+  }, [city, page]);
 
   return (
     <Container>
       <SearchBar onSubmit={handleSubmit} />
       {isLoading && <Loader />}
-      <DepartmentsList
-        city={city}
-        isLoading={isLoading}
-        items={departments}
-        onClick={onClickLoadMore}
-      />
+      <DepartmentsList city={city} isLoading={isLoading} items={departments} />
+      {departments.length > 0 && total > departments.length && (
+        <Button onClick={onClickLoadMore}>LoadMore</Button>
+      )}
     </Container>
   );
 };
