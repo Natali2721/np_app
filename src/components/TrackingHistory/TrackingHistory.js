@@ -9,11 +9,6 @@ import { AiFillDelete } from 'react-icons/ai';
 import PropTypes from 'prop-types';
 
 const TrackHistory = ({ items, onClick, updateNumber }) => {
-  console.log(items);
-  console.log(items.length);
-
-  // const reversed = items.reverse();
-
   return (
     <ContentBox>
       <Text>Історія пошуку...</Text>
