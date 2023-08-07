@@ -4,7 +4,7 @@ export const SearchInput = () => (
   <Input
     type="text"
     name="city"
-    pattern="^[А-Яа-яёЁЇїІіЄєҐґ]+$"
+    pattern="^[А-Яа-яЇїІіЄєҐґ]+$"
     title="May contain only letters"
     required
     autoComplete="off"

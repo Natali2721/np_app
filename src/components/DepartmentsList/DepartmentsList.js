@@ -1,9 +1,7 @@
-import { Button, Galery, GaleryItem, Title } from 'styles/Element.styled';
+import { Galery, GaleryItem, Title } from 'styles/Element.styled';
 import PropTypes from 'prop-types';
 
 const DepartmentsList = ({ items, onClick, city }) => {
-  console.log(items);
-
   return (
     <div>
       {items.length === 0 && city === '' && (
@@ -18,7 +16,6 @@ const DepartmentsList = ({ items, onClick, city }) => {
           })}
         </Galery>
       )}
-      {items.length > 0 && <Button onClick={onClick}>LoadMore</Button>}
     </div>
   );
 };

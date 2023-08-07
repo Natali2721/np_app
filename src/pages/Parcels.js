@@ -25,7 +25,6 @@ const Parcels = () => {
     console.log(searchForm.elements.TTN.value);
     setTrackingNumber(searchForm.elements.TTN.value);
     localStorage.setItem('numbers', JSON.stringify(trackingList));
-    //searchForm.reset();
   };
 
   const onClick = () => {
@@ -35,18 +34,10 @@ const Parcels = () => {
   };
 
   useEffect(() => {
-    if (trackingNumber === '') {
-      return console.log('There is no TTN number');
-    }
-    console.log(trackingNumber);
-
     getTrackingInfo(trackingNumber).then(data => {
-      console.log(data);
       if (!data) {
         setTrackingInfo({});
-        return console.log(
-          'There is no TTN with this request. Please, try again'
-        );
+        return;
       }
       setTrackingInfo(data);
 
