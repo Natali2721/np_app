@@ -41,18 +41,6 @@ export const getDepartmentsInfo = async (city, page) => {
   };
 
   const response = await instance.post('', config);
+
   return response.data;
 };
-
-// export const getDepartmentsInfo = async (page: number) => {
-//   const reqCredentials = reqStructure({
-//     modelName: 'Address',
-//     calledMethod: 'getWarehouses',
-//     methodProperties: {
-//       Page: page,
-//       Limit: LIMIT_PER_PAGE,
-//     },
-//   });
-//   const { data } = await instance.post('', reqCredentials);
-//   return { data: data.data, totalCount: data.info.totalCount };
-// };
