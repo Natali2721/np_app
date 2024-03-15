@@ -2,7 +2,7 @@
   "name": "test_sameit",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Natali2721.github.io/test_sameit/",
+  "homepage": "https://Natali2721.github.io/np_app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
