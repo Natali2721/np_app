@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/np_app/static/css/main.7acaea2f.css",
-    "main.js": "/np_app/static/js/main.1df4af4e.js",
-    "static/js/448.8e2dc6d3.chunk.js": "/np_app/static/js/448.8e2dc6d3.chunk.js",
-    "static/js/890.0a674eba.chunk.js": "/np_app/static/js/890.0a674eba.chunk.js",
-    "static/js/720.923b2479.chunk.js": "/np_app/static/js/720.923b2479.chunk.js",
-    "static/js/820.6f890566.chunk.js": "/np_app/static/js/820.6f890566.chunk.js",
-    "static/js/686.d0d6bbac.chunk.js": "/np_app/static/js/686.d0d6bbac.chunk.js",
-    "index.html": "/np_app/index.html",
-    "main.7acaea2f.css.map": "/np_app/static/css/main.7acaea2f.css.map",
-    "main.1df4af4e.js.map": "/np_app/static/js/main.1df4af4e.js.map",
-    "448.8e2dc6d3.chunk.js.map": "/np_app/static/js/448.8e2dc6d3.chunk.js.map",
-    "890.0a674eba.chunk.js.map": "/np_app/static/js/890.0a674eba.chunk.js.map",
-    "720.923b2479.chunk.js.map": "/np_app/static/js/720.923b2479.chunk.js.map",
-    "820.6f890566.chunk.js.map": "/np_app/static/js/820.6f890566.chunk.js.map",
-    "686.d0d6bbac.chunk.js.map": "/np_app/static/js/686.d0d6bbac.chunk.js.map"
+    "main.css": "/test_sameit/static/css/main.7acaea2f.css",
+    "main.js": "/test_sameit/static/js/main.d9662904.js",
+    "static/js/448.dd1017dc.chunk.js": "/test_sameit/static/js/448.dd1017dc.chunk.js",
+    "static/js/890.a68c81b6.chunk.js": "/test_sameit/static/js/890.a68c81b6.chunk.js",
+    "static/js/720.0039b65d.chunk.js": "/test_sameit/static/js/720.0039b65d.chunk.js",
+    "static/js/820.974dad73.chunk.js": "/test_sameit/static/js/820.974dad73.chunk.js",
+    "static/js/686.4471e183.chunk.js": "/test_sameit/static/js/686.4471e183.chunk.js",
+    "index.html": "/test_sameit/index.html",
+    "main.7acaea2f.css.map": "/test_sameit/static/css/main.7acaea2f.css.map",
+    "main.d9662904.js.map": "/test_sameit/static/js/main.d9662904.js.map",
+    "448.dd1017dc.chunk.js.map": "/test_sameit/static/js/448.dd1017dc.chunk.js.map",
+    "890.a68c81b6.chunk.js.map": "/test_sameit/static/js/890.a68c81b6.chunk.js.map",
+    "720.0039b65d.chunk.js.map": "/test_sameit/static/js/720.0039b65d.chunk.js.map",
+    "820.974dad73.chunk.js.map": "/test_sameit/static/js/820.974dad73.chunk.js.map",
+    "686.4471e183.chunk.js.map": "/test_sameit/static/js/686.4471e183.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.1df4af4e.js"
+    "static/js/main.d9662904.js"
   ]
 }
